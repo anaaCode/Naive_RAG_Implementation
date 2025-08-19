@@ -1,0 +1,71 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --panel-2: #0b1220;
+  --border: #1f2937;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --primary: #3b82f6;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+
+.layout { display: grid; grid-template-columns: 280px 1fr; height: 100%; }
+
+.sidebar { background: var(--panel-2); border-right: 1px solid var(--border); padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+.logo { font-size: 22px; font-weight: 700; }
+.sidebar nav { display: grid; gap: 8px; }
+.sidebar nav a { color: var(--text); opacity: 0.8; padding: 10px 12px; border-radius: 8px; text-decoration: none; cursor: default; }
+.sidebar nav a.active, .sidebar nav a:hover { background: #0e1626; opacity: 1; }
+.history { margin-top: auto; background: #0a1221; border: 1px solid var(--border); border-radius: 12px; padding: 12px; }
+.h-title { color: var(--muted); font-size: 12px; margin-bottom: 8px; }
+.h-item { font-weight: 600; margin-bottom: 8px; }
+.h-msg { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+
+.content { padding: 24px; overflow: auto; }
+
+.panel { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 16px; }
+.panel-title { font-weight: 700; margin-bottom: 12px; }
+.pipeline { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+.chip { background: #0a1221; border: 1px solid var(--border); border-radius: 12px; padding: 12px; }
+.chip.green { background: #071a13; }
+.chip.purple { background: #1a1022; }
+.chip.orange { background: #1f1408; }
+.c-title { font-weight: 600; margin-bottom: 8px; }
+.c-badges { display: flex; flex-wrap: wrap; gap: 6px; }
+.badge { background: #0b1220; border: 1px solid var(--border); padding: 4px 8px; border-radius: 999px; font-size: 12px; color: var(--muted); }
+
+.controls { display: flex; gap: 20px; align-items: center; padding-top: 12px; }
+.control { display: flex; align-items: center; gap: 10px; }
+.control label { color: var(--muted); font-size: 13px; }
+.control input[type=range] { width: 200px; }
+.k { background: #0b1220; padding: 2px 8px; border-radius: 8px; border: 1px solid var(--border); }
+.control select { background: #0b1220; color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; }
+
+.upload { margin-top: 16px; background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 16px; }
+.u-title { font-weight: 700; margin-bottom: 10px; }
+.u-drop { border: 2px dashed #223048; border-radius: 16px; padding: 40px; text-align: center; cursor: pointer; background: #0a1221; }
+.u-hint { font-size: 14px; }
+.u-sub { color: var(--muted); font-size: 12px; margin-top: 8px; }
+.u-stats { margin-top: 10px; color: var(--muted); }
+
+.chatbox { margin-top: 16px; display: grid; grid-template-columns: 1fr 120px; gap: 10px; }
+.chatbox input { background: #0b1220; color: var(--text); border: 1px solid var(--border); border-radius: 12px; padding: 12px; }
+.chatbox button { background: var(--primary); color: white; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; }
+.chatbox button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.result { margin-top: 16px; display: grid; gap: 12px; grid-template-columns: 1fr 360px; }
+.answer { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 16px; line-height: 1.6; }
+.sources { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 16px; }
+.s-title { font-weight: 700; margin-bottom: 8px; }
+.source { border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px; }
+.s-head { color: var(--muted); font-size: 12px; margin-bottom: 6px; }
+.s-text { font-size: 13px; color: #d1d5db; }
+
+@media (max-width: 1200px) {
+  .pipeline { grid-template-columns: 1fr 1fr; }
+  .result { grid-template-columns: 1fr; }
+}
+
